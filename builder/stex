@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# セクションごとTeXファイルを作って様子をみるためのシェルスクリプト
+# $ stex MAIN_FILE_NAME SECTION_TITLE
+
+rm stex.tex
+touch stex.tex
+
+cat articles/settings.tex >> stex.tex
+cat articles/begin.tex >> stex.tex
+echo "\\section{$2}" >> stex.tex
+cat articles/$1.tex >> stex.tex
+
+echo "\\end{document}" >> stex.tex
+
+
+platex stex
+dvipdfmx stex
+echo "Done!"
+open stex.pdf

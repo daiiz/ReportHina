@@ -1,0 +1,5 @@
+python builder/texmerge.py $1
+platex $1_o
+dvipdfmx $1_o
+echo "Done!"
+open $1_o.pdf
