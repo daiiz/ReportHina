@@ -49,7 +49,8 @@ if __name__ == '__main__':
         res = []  # 最終的に出力する内容
         main = codecs.open(main_path, 'r', 'utf_8')
         for line in main:
-            m = re.strip().search('^\%\%\%\% *', line)
+            line = line.strip();
+            m = re.search('^\%\%\%\% *', line)
             if m != None:
                 article_file = line.split(' ')[1]
 
