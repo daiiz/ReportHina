@@ -3,6 +3,8 @@
 *.aux
 *.dvi
 *.log
+*.toc
 texput.log
 
+sample_o.tex
 stex.tex
